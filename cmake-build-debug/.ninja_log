@@ -1,6 +1,19 @@
 # ninja log v6
-6	581	7537538223731893	CMakeFiles/ChessGame.dir/src/main.cpp.obj	6f94f33c0e3abf3e
-265	668	7537536770787890	ChessGame.exe	556e4a5325056438
-3	227	7537542166933650	build.ninja	404378c4b13fc4bb
-7	446	7537542167263650	CMakeFiles/ChessGame.dir/src/main.cpp.obj	6f94f33c0e3abf3e
-448	1435	7537542171663672	ChessGame.exe	556e4a5325056438
+5	634	7537562979552731	CMakeFiles/ChessGame.dir/src/main.cpp.obj	8538894ed5db0e40
+12	444	7537557380704460	CMakeFiles/ChessGame.dir/src/Base/Scene.cpp.obj	4f068e264e2c987d
+13	455	7537562979642732	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	750c8c1549626fb2
+2	254	7537563685821715	build.ninja	404378c4b13fc4bb
+440	1431	7537546852788805	ChessGame.exe	556e4a5325056438
+24	643	7537557380814465	CMakeFiles/ChessGame.dir/src/Base/SceneManager.cpp.obj	a5a578dc3646f20c
+16	666	7537559079733348	CMakeFiles/ChessGame.dir/src/Base/Game.cpp.obj	bfc91d14e2533d25
+4	636	7537564088772917	CMakeFiles/ChessGame.dir/src/main.cpp.obj	8538894ed5db0e40
+5	645	7537564908784644	CMakeFiles/ChessGame.dir/src/main.cpp.obj	8538894ed5db0e40
+645	1645	7537564915194660	ChessGame.exe	d868ec6b5659ac21
+5	463	7537567011545659	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	750c8c1549626fb2
+463	1457	7537567016132548	ChessGame.exe	d868ec6b5659ac21
+4	442	7537567322890751	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	750c8c1549626fb2
+442	1419	7537567327270761	ChessGame.exe	d868ec6b5659ac21
+4	440	7537567431297452	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	750c8c1549626fb2
+440	1424	7537567435657458	ChessGame.exe	d868ec6b5659ac21
+6	448	7537567504182870	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	750c8c1549626fb2
+448	1433	7537567508602891	ChessGame.exe	d868ec6b5659ac21

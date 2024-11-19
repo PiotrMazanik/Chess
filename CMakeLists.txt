@@ -9,8 +9,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Find SDL2
 find_package(SDL2 REQUIRED)
 
+# Add include directories
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
 # Add executable
-add_executable(ChessGame src/main.cpp)
+add_executable(ChessGame src/main.cpp
+        src/Base/Scene.cpp
+        src/Base/Scene.h
+        src/Chess/ChessScene.cpp
+        src/Chess/ChessScene.h
+        src/Base/SceneManager.cpp
+        src/Base/SceneManager.h
+        src/Base/Game.cpp
+        src/Base/Game.h)
 
 # Link SDL2 and SDL2main
 target_link_libraries(ChessGame PRIVATE SDL2::SDL2 SDL2::SDL2main)
