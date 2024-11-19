@@ -1,0 +1,10 @@
+^C:\USERS\ARCH\CLIONPROJECTS\CHESSGAME\BUILD\CMAKEFILES\C9F85F1221454840D7578142B61BBBAF\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Arch/CLionProjects/ChessGame -BC:/Users/Arch/CLionProjects/ChessGame/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Arch/CLionProjects/ChessGame/build/ChessGame.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
