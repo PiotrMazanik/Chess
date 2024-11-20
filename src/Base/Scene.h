@@ -16,6 +16,10 @@ public:
     // Render the scene (draw to the screen)
     virtual void render(SDL_Renderer* renderer) = 0;
 
+
+    // Handle input events (mouse, keyboard, etc.)
+    virtual void handleInput(SDL_Event& event, SDL_Renderer* renderer) = 0;
+
     // Clean up resources
     virtual void cleanup() = 0;
 };

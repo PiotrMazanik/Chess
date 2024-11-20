@@ -3,7 +3,8 @@
 //
 #include "SceneManager.h"
 
-void SceneManager::changeScene(std::shared_ptr<Scene> newScene, SDL_Window* window, SDL_Renderer* renderer) {
+void SceneManager::changeScene(std::shared_ptr<Scene> newScene, SDL_Window* window, SDL_Renderer* renderer)
+{
     if (currentScene) {
         currentScene->cleanup();
     }
@@ -13,14 +14,24 @@ void SceneManager::changeScene(std::shared_ptr<Scene> newScene, SDL_Window* wind
     }
 }
 
-void SceneManager::update(float deltaTime) {
+void SceneManager::update(float deltaTime)
+{
     if (currentScene) {
         currentScene->update(deltaTime);
     }
 }
 
-void SceneManager::render(SDL_Renderer* renderer) {
+void SceneManager::handleInput(SDL_Event& event, SDL_Renderer* renderer)
+{
+    if (currentScene) {
+        currentScene->handleInput(event,renderer);
+    }
+}
+
+void SceneManager::render(SDL_Renderer* renderer)
+    {
     if (currentScene) {
         currentScene->render(renderer);
     }
 }
+

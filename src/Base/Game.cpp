@@ -47,6 +47,9 @@ void Game::handleEvents() {
         if (event.type == SDL_QUIT) {
             running = false;
         }
+
+        // Forward event to the current scene
+        sceneManager.handleInput(event, renderer);
     }
 }
 

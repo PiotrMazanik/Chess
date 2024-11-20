@@ -22,7 +22,7 @@ public:
     void removePiece(int row, int col);
     void removePiece(int index);
 
-    void MovePiece(int row, int col);
+    void MovePiece(int row1,int col1,int row2, int col2);
 
     void RenderPieces(SDL_Renderer* renderer);
 

@@ -27,6 +27,42 @@ Board::~Board()
 {
 }
 
+Piece* Board::getPiece(int index)
+{
+    return &board_data[index];
+}
+
+Piece* Board::getPiece(int row, int col)
+{
+    return &board_data[row*HEIGHT + col];
+}
+
+void Board::setPiece(int index, Piece* piece)
+{
+    board_data[index] = *piece;
+}
+
+void Board::setPiece(int row, int col, Piece* piece)
+{
+    board_data[row*HEIGHT + col] = *piece;
+}
+
+void Board::removePiece(int index)
+{
+    board_data[index] = Piece();
+}
+
+void Board::removePiece(int row, int col)
+{
+    board_data[row*HEIGHT + col] = Piece();
+}
+
+void Board::MovePiece(int row1,int col1,int row2, int col2)
+{
+    board_data[row2*HEIGHT + col2] = Piece();
+    std::swap(board_data[row1*HEIGHT + col1],board_data[row2*HEIGHT + col2]);
+}
+
 
 void Board::RenderPieces(SDL_Renderer* renderer)
 {

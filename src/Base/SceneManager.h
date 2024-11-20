@@ -14,6 +14,8 @@ public:
     void update(float deltaTime);
     void render(SDL_Renderer* renderer);
 
+    void handleInput(SDL_Event& event, SDL_Renderer* renderer);
+
 private:
     std::shared_ptr<Scene> currentScene = nullptr;
 };

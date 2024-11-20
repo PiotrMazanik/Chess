@@ -27,7 +27,9 @@ add_executable(ChessGame src/main.cpp
         src/Chess/Board.cpp
         src/Chess/Board.h
         src/Chess/Piece.cpp
-        src/Chess/Piece.h)
+        src/Chess/Piece.h
+        src/Chess/InputHandler.cpp
+        src/Chess/InputHandler.h)
 
 # Link SDL2 and SDL2main
 # Link SDL2 and SDL2_image libraries
