@@ -21,7 +21,11 @@ add_executable(ChessGame src/main.cpp
         src/Base/SceneManager.cpp
         src/Base/SceneManager.h
         src/Base/Game.cpp
-        src/Base/Game.h)
+        src/Base/Game.h
+        src/Chess/Board.cpp
+        src/Chess/Board.h
+        src/Chess/Piece.cpp
+        src/Chess/Piece.h)
 
 # Link SDL2 and SDL2main
 target_link_libraries(ChessGame PRIVATE SDL2::SDL2 SDL2::SDL2main)

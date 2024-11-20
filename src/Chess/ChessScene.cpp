@@ -10,6 +10,9 @@ void ChessScene::init(SDL_Window* window, SDL_Renderer* renderer) {
     }
     boardTexture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
+
+    square = {0,0,80,80};
+
 }
 
 void ChessScene::update(float deltaTime) {
@@ -26,6 +29,8 @@ void ChessScene::render(SDL_Renderer* renderer) {
         SDL_RenderCopy(renderer, boardTexture, nullptr, nullptr);
     }
 
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+    SDL_RenderFillRect(renderer,&square);
     // Present the rendered content
     SDL_RenderPresent(renderer);
 }

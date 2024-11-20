@@ -12,6 +12,7 @@ public:
 
 private:
     SDL_Texture* boardTexture = nullptr; // Chessboard texture
+    SDL_Rect square;
 };
 
 #endif // CHESSBOARD_SCENE_H
