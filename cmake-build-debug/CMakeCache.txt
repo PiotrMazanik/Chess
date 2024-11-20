@@ -119,7 +119,7 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/ChessGame
 CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.3/bin/mingw/bin/ld.exe
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.3/bin/ninja/win/x64/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/ninja/win/x64/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -253,8 +253,20 @@ ChessGame_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 ChessGame_SOURCE_DIR:STATIC=C:/Users/Arch/CLionProjects/ChessGame
 
+//Path to a library.
+PNG_LIBRARY_DEBUG:FILEPATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/debug/lib/libpng16d.lib
+
+//Path to a library.
+PNG_LIBRARY_RELEASE:FILEPATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/lib/libpng16.lib
+
+//Path to a file.
+PNG_PNG_INCLUDE_DIR:PATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/include
+
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/share/sdl2
+
+//The directory containing a CMake configuration file for SDL2_image.
+SDL2_image_DIR:PATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/share/SDL2_image
 
 //Automatically copy dependencies into the output directory for
 // executables.
@@ -294,6 +306,15 @@ X_VCPKG_APPLOCAL_DEPS_INSTALL:BOOL=OFF
 //(experimental) Add USES_TERMINAL to VCPKG_APPLOCAL_DEPS to force
 // serialization.
 X_VCPKG_APPLOCAL_DEPS_SERIALIZED:BOOL=OFF
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/debug/lib/zlibd.lib
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=C:/Users/Arch/source/vcpkg-master/installed/x64-windows/lib/zlib.lib
 
 //Path to a program.
 Z_VCPKG_BUILTIN_POWERSHELL_PATH:FILEPATH=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
@@ -469,8 +490,24 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_TOOLCHAIN_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding PNG
+FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[optimized;C:/Users/Arch/source/vcpkg-master/installed/x64-windows/lib/libpng16.lib;debug;C:/Users/Arch/source/vcpkg-master/installed/x64-windows/debug/lib/libpng16d.lib][C:/Users/Arch/source/vcpkg-master/installed/x64-windows/include][v1.6.44()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[optimized;C:/Users/Arch/source/vcpkg-master/installed/x64-windows/lib/zlib.lib;debug;C:/Users/Arch/source/vcpkg-master/installed/x64-windows/debug/lib/zlibd.lib][C:/Users/Arch/source/vcpkg-master/installed/x64-windows/include][c ][v1.3.1()]
+//ADVANCED property for variable: PNG_LIBRARY_DEBUG
+PNG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_RELEASE
+PNG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
+PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: VCPKG_VERBOSE
 VCPKG_VERBOSE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //Making sure VCPKG_MANIFEST_MODE doesn't change
 Z_VCPKG_CHECK_MANIFEST_MODE:INTERNAL=OFF
 //The path to the PowerShell implementation to use.

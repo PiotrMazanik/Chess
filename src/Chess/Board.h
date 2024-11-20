@@ -5,6 +5,8 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "Piece.h"
 
 
@@ -22,10 +24,18 @@ public:
 
     void MovePiece(int row, int col);
 
+    void RenderPieces(SDL_Renderer* renderer);
+
 private:
     const static int WIDTH = 8;
     const static int HEIGHT = 8;
     Piece board_data[WIDTH*HEIGHT];
+
+    struct float2
+    {
+        float x;
+        float y;
+    };
 };
 
 #endif //BOARD_H

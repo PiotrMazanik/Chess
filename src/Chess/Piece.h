@@ -14,9 +14,9 @@ class Piece {
         Type_Empty,
         King,
         Queen,
-        Rook,
         Bishop,
         Knight,
+        Rook,
         Pawn
     };
 
@@ -31,6 +31,9 @@ public:
     Piece(Type,Faction);
     Piece();
     ~Piece();
+
+    Type GetType(){return type;}
+    Faction GetFaction(){return faction;}
 
 private:
     Type type;

@@ -23,3 +23,70 @@ Board::Board()
     std::copy(std::begin(temp_board_data), std::end(temp_board_data), std::begin(board_data));
 }
 
+Board::~Board()
+{
+}
+
+
+void Board::RenderPieces(SDL_Renderer* renderer)
+{
+    // Load the texture containing the pieces
+    SDL_Texture* piecesTexture = IMG_LoadTexture(renderer, "../assets/Pieces.png");
+    if (!piecesTexture) {
+        SDL_Log("Failed to load texture: %s", SDL_GetError());
+        return;
+    }
+
+    // Query the dimensions of the texture
+    int textureWidth, textureHeight;
+    if (SDL_QueryTexture(piecesTexture, nullptr, nullptr, &textureWidth, &textureHeight) != 0) {
+        SDL_Log("Failed to query texture: %s", SDL_GetError());
+        SDL_DestroyTexture(piecesTexture);
+        return;
+    }
+
+    // Calculate sprite dimensions dynamically
+    const int spriteWidth = textureWidth / 6; // 6 columns (types of pieces)
+    const int spriteHeight = textureHeight / 2; // 2 rows (factions: white and black)
+
+    // Dimensions of the board cells
+    const int cellWidth = 100;  // Width of a single board cell
+    const int cellHeight = 100; // Height of a single board cell
+
+    // Iterate over the board data
+    for (int i = 0; i < WIDTH * HEIGHT; i++) {
+        Piece& piece = board_data[i];
+
+        // Skip empty cells
+        if (piece.GetType() == Piece::Type_Empty) {
+            continue;
+        }
+
+        // Calculate board position
+        int col = i % WIDTH;
+        int row = i / WIDTH;
+
+        // Calculate screen position
+        int x = col * cellWidth;
+        int y = row * cellHeight;
+
+        // Determine the source rectangle for the piece
+        SDL_Rect srcRect = {
+            (static_cast<int>(piece.GetType())-1) * spriteWidth, // x-offset in the texture
+            piece.GetFaction() == Piece::White ? 0 : spriteHeight, // y-offset in the texture
+            spriteWidth,
+            spriteHeight
+        };
+
+        // Destination rectangle on the screen
+        SDL_Rect destRect = { x, y, cellWidth, cellHeight };
+
+        // Render the piece
+        SDL_RenderCopy(renderer, piecesTexture, &srcRect, &destRect);
+    }
+
+    // Clean up the texture after rendering
+    SDL_DestroyTexture(piecesTexture);
+}
+
+

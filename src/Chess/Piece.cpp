@@ -12,3 +12,9 @@ Piece::Piece():type(Type_Empty),faction(Faction_Empty)
 {
 }
 
+Piece::~Piece()
+{
+
+}
+
+

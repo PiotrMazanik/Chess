@@ -1,6 +1,7 @@
 ﻿#include "ChessScene.h"
 #include <SDL2/SDL_image.h>
 
+
 void ChessScene::init(SDL_Window* window, SDL_Renderer* renderer) {
     // Load chessboard texture
     SDL_Surface* surface = SDL_LoadBMP("../assets/chess.bmp"); // Example file
@@ -10,8 +11,6 @@ void ChessScene::init(SDL_Window* window, SDL_Renderer* renderer) {
     }
     boardTexture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
-
-    square = {0,0,80,80};
 
 }
 
@@ -30,7 +29,9 @@ void ChessScene::render(SDL_Renderer* renderer) {
     }
 
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-    SDL_RenderFillRect(renderer,&square);
+
+    m_board.RenderPieces(renderer);
+
     // Present the rendered content
     SDL_RenderPresent(renderer);
 }

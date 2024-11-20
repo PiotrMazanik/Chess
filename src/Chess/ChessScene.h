@@ -2,6 +2,7 @@
 #define CHESSBOARD_SCENE_H
 
 #include "../Base/Scene.h"
+#include "Board.h"
 
 class ChessScene : public Scene {
 public:
@@ -13,6 +14,8 @@ public:
 private:
     SDL_Texture* boardTexture = nullptr; // Chessboard texture
     SDL_Rect square;
+
+    Board m_board;
 };
 
 #endif // CHESSBOARD_SCENE_H
