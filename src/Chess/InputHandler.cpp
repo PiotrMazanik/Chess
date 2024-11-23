@@ -4,6 +4,8 @@
 
 #include "InputHandler.h"
 
+using ScannedCell::cell_type;
+
 InputHandler::InputHandler(Board* gameBoard) : board(gameBoard) {}
 
 void InputHandler::HandleEvent(SDL_Event& e, SDL_Renderer* renderer) {
@@ -37,4 +39,61 @@ void InputHandler::HandleEvent(SDL_Event& e, SDL_Renderer* renderer) {
             SDL_RenderPresent(renderer);
         }
     }
+}
+
+std::vector<ScannedCell> InputHandler::ScanCells()
+{
+    std::vector<ScannedCell> cells;
+    if(pieceSelected)
+    {
+        cells.push_back(ScannedCell(cell_type::selectedCell,selectedRow, selectedCol));
+    }
+    Piece* selectedPiece = board->getPiece(selectedRow, selectedCol);
+
+    int direction = 0;
+    if (selectedPiece->GetFaction()== Piece::Black)
+    {
+        direction = -1;
+    }
+    else if (selectedPiece->GetFaction() == Piece::White)
+    {
+        direction = 1;
+    }
+
+switch (selectedPiece->GetType())
+{
+    case Piece::Type_Empty:
+        break;
+case Piece::Pawn:
+        if(board->getPiece(selectedRow+direction,selectedCol)->GetType() == Piece::Type_Empty)
+        {
+            cells.push_back(ScannedCell(cell_type::canMoveTo,selectedRow+direction,selectedCol));
+        }
+        if(board->getPiece(selectedRow+direction+direction,selectedCol)->GetType() == Piece::Type_Empty)
+        {
+            cells.push_back(ScannedCell(cell_type::canMoveTo,selectedRow+direction+direction,selectedCol));
+        }
+        if(board->getPiece(selectedRow+direction,selectedCol+1)->GetType() != Piece::Type_Empty)
+        {
+            cells.push_back(ScannedCell(cell_type::CanCapture,selectedRow+direction,selectedCol+1));
+        }
+        if(board->getPiece(selectedRow+direction,selectedCol+1)->GetType() != Piece::Type_Empty)
+        {
+           cells.push_back(ScannedCell(cell_type::CanCapture,selectedRow+direction,selectedCol-1));
+        }
+        break;
+    case Piece::Knight:
+        break;
+    case Piece::Bishop:
+        break;
+    case Piece::Rook:
+        break;
+    case Piece::Queen:
+        break;
+    case Piece::King:
+        break;
+
+
+}
+return cells;
 }

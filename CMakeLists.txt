@@ -36,6 +36,8 @@ add_executable(ChessGame
         src/Chess/Piece.h
         src/Chess/InputHandler.cpp
         src/Chess/InputHandler.h
+        src/Chess/ScannedCell.cpp
+        src/Chess/ScannedCell.h
 )
 
 # Link SDL2 and SDL2_image to your executable

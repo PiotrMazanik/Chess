@@ -236,8 +236,8 @@ CMAKE_STRIP:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.3/bin/mingw/bin/str
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/scripts/buildsystems/vcpkg.cmake
+//Vcpkg toolchain file
+CMAKE_TOOLCHAIN_FILE:STRING=vcpkg-master/scripts/buildsystems/vcpkg.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console

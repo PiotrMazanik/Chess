@@ -1,20 +1,11 @@
 # ninja log v6
-5	722	7538318893931290	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	750c8c1549626fb2
-14	549	7538310183351417	CMakeFiles/ChessGame.dir/src/Base/Scene.cpp.obj	4f068e264e2c987d
-5	776	7538310183271421	CMakeFiles/ChessGame.dir/src/main.cpp.obj	8538894ed5db0e40
-745	2204	7538318901318689	ChessGame.exe	89364a3a4f187271
-21	75	7538140665893228	CMakeFiles/ChessGame.dir/src/Chess/Piece.cpp.obj	f4676bdece661dee
-1	263	7540837094199639	build.ninja	404378c4b13fc4bb
-5	703	7538311835715767	CMakeFiles/ChessGame.dir/src/Base/SceneManager.cpp.obj	a5a578dc3646f20c
-13	745	7538318894011289	CMakeFiles/ChessGame.dir/src/Base/Game.cpp.obj	bfc91d14e2533d25
-20	656	7538318894076335	CMakeFiles/ChessGame.dir/src/Chess/Board.cpp.obj	913f69cbe4fb89ab
-27	510	7538318894141452	CMakeFiles/ChessGame.dir/src/Chess/InputHandler.cpp.obj	add289e12eeb7b3f
-48	119	7540837204354602	CMakeFiles/ChessGame.dir/src/Chess/Piece.cpp.obj	2b6f2a389622795d
-18	591	7540837204055484	CMakeFiles/ChessGame.dir/src/Base/Scene.cpp.obj	7c315a757aa2a6ed
-54	658	7540837204415653	CMakeFiles/ChessGame.dir/src/Chess/InputHandler.cpp.obj	d4d12751b1f842ca
-41	818	7540837204281906	CMakeFiles/ChessGame.dir/src/Chess/Board.cpp.obj	8fa8252beac0169e
 23	827	7540837204101032	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	64a4daf7f2e9d3f7
+18	591	7540837204055484	CMakeFiles/ChessGame.dir/src/Base/Scene.cpp.obj	7c315a757aa2a6ed
 10	834	7540837203974720	CMakeFiles/ChessGame.dir/src/main.cpp.obj	b908a570c803b66e
+873	2303	7540837212607656	ChessGame.exe	af1f99483df7dae
+48	119	7540837204354602	CMakeFiles/ChessGame.dir/src/Chess/Piece.cpp.obj	2b6f2a389622795d
+1	263	7540843536436196	build.ninja	404378c4b13fc4bb
 29	838	7540837204161003	CMakeFiles/ChessGame.dir/src/Base/SceneManager.cpp.obj	9390c4239005115
 35	873	7540837204221402	CMakeFiles/ChessGame.dir/src/Base/Game.cpp.obj	f8308fd9148a0393
-873	2303	7540837212607656	ChessGame.exe	af1f99483df7dae
+41	818	7540837204281906	CMakeFiles/ChessGame.dir/src/Chess/Board.cpp.obj	8fa8252beac0169e
+54	658	7540837204415653	CMakeFiles/ChessGame.dir/src/Chess/InputHandler.cpp.obj	d4d12751b1f842ca
