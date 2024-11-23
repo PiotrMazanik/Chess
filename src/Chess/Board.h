@@ -31,6 +31,7 @@ private:
     const static int HEIGHT = 8;
     Piece board_data[WIDTH*HEIGHT];
 
+
     struct float2
     {
         float x;
