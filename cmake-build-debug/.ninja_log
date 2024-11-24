@@ -45,3 +45,5 @@
 6	754	7541754093743194	CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj	64a4daf7f2e9d3f7
 17	792	7541754093852867	CMakeFiles/ChessGame.dir/src/Base/Game.cpp.obj	f8308fd9148a0393
 792	3069	7541754101597903	ChessGame.exe	eaf88554f538cc01
+6	592	7541755224335085	CMakeFiles/ChessGame.dir/src/Chess/InputHandler.cpp.obj	d4d12751b1f842ca
+593	2848	7541755230203013	ChessGame.exe	eaf88554f538cc01

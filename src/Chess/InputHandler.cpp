@@ -30,8 +30,7 @@ void InputHandler::HandleEvent(SDL_Event& e, SDL_Renderer* renderer) {
             }
         } else {
             // Second click: move the piece
-            if ((selectedRow != clickedRow || selectedCol != clickedCol) &&
-                board->getPiece(selectedRow, selectedCol)->GetFaction() != board->getPiece(clickedRow, clickedCol)->GetFaction())
+            if (board->getPiece(selectedRow, selectedCol)->GetFaction() != board->getPiece(clickedRow, clickedCol)->GetFaction())
             {
                 board->MovePiece(selectedRow, selectedCol, clickedRow, clickedCol);
                 pieceSelected = false;
