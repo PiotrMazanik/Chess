@@ -16,12 +16,15 @@ public:
     void HandleEvent(SDL_Event& e, SDL_Renderer* renderer);
 
     std::vector<ScannedCell>  ScanCells();
+    void RenderHighlight(SDL_Renderer* renderer);
 private:
+
     bool pieceSelected = false; // Whether a piece is selected
     int selectedRow = -1;       // Row of the selected piece
     int selectedCol = -1;       // Column of the selected piece
     Board* board;               // Pointer to the chess board
-
+    const int WIDTH = 8;
+    const int HEIGHT = 8;
 };
 
 #endif //INPUTHANDLER_H

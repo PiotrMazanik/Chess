@@ -4,7 +4,7 @@
 
 #include "InputHandler.h"
 
-using ScannedCell::cell_type;
+using cell_type = ScannedCell::cell_type;
 
 InputHandler::InputHandler(Board* gameBoard) : board(gameBoard) {}
 
@@ -53,11 +53,11 @@ std::vector<ScannedCell> InputHandler::ScanCells()
     int direction = 0;
     if (selectedPiece->GetFaction()== Piece::Black)
     {
-        direction = -1;
+        direction = 1;
     }
     else if (selectedPiece->GetFaction() == Piece::White)
     {
-        direction = 1;
+        direction = -1;
     }
 
 switch (selectedPiece->GetType())
@@ -69,9 +69,12 @@ case Piece::Pawn:
         {
             cells.push_back(ScannedCell(cell_type::canMoveTo,selectedRow+direction,selectedCol));
         }
-        if(board->getPiece(selectedRow+direction+direction,selectedCol)->GetType() == Piece::Type_Empty)
+        if((direction == 1 && selectedRow  == 1)||(direction == -1 && selectedRow  == 6))
         {
-            cells.push_back(ScannedCell(cell_type::canMoveTo,selectedRow+direction+direction,selectedCol));
+            if(board->getPiece(selectedRow+direction+direction,selectedCol)->GetType() == Piece::Type_Empty)
+            {
+                cells.push_back(ScannedCell(cell_type::canMoveTo,selectedRow+direction+direction,selectedCol));
+            }
         }
         if(board->getPiece(selectedRow+direction,selectedCol+1)->GetType() != Piece::Type_Empty)
         {
@@ -96,4 +99,77 @@ case Piece::Pawn:
 
 }
 return cells;
+}
+
+void InputHandler::RenderHighlight(SDL_Renderer* renderer)
+{
+    std::vector<ScannedCell> ScannedCells = ScanCells();
+
+    // Load the texture containing the pieces
+    SDL_Texture* piecesTexture = IMG_LoadTexture(renderer, "../assets/Highlight.png");
+    if (!piecesTexture) {
+        SDL_Log("Failed to load texture: %s", SDL_GetError());
+        return;
+    }
+
+    // Query the dimensions of the texture
+    int textureWidth, textureHeight;
+    if (SDL_QueryTexture(piecesTexture, nullptr, nullptr, &textureWidth, &textureHeight) != 0) {
+        SDL_Log("Failed to query texture: %s", SDL_GetError());
+        SDL_DestroyTexture(piecesTexture);
+        return;
+    }
+
+    // Calculate sprite dimensions dynamically
+    const int spriteWidth = textureWidth / 3; // 6 columns (types of pieces)
+    const int spriteHeight = textureHeight / 1; // 2 rows (factions: white and black)
+
+    // Dimensions of the board cells
+    const int cellWidth = 100;  // Width of a single board cell
+    const int cellHeight = 100; // Height of a single board cell
+
+    // Iterate over the board data
+    for (int i = 0; i <ScannedCells.size() ; i++) {
+        ScannedCell& cell = ScannedCells[i];
+
+        // Calculate screen position
+        int x = cell.Get_X() * cellWidth;
+        int y = cell.Get_Y() * cellHeight;
+
+
+        int sprite_offset_x = 0;
+        int sprite_offset_y = 0;
+        switch (cell.Get_Type())
+        {
+        case cell_type::blank:
+            continue;
+        case cell_type::CanCapture:
+            sprite_offset_x = spriteWidth;
+            break;
+        case cell_type::canMoveTo:
+            sprite_offset_y = 0;
+            sprite_offset_x = 0;
+            break;
+        case cell_type::selectedCell:
+            sprite_offset_x = spriteWidth*2;
+            break;
+
+        }
+        // Determine the source rectangle for the piece
+        SDL_Rect srcRect = {
+            sprite_offset_x, // x-offset in the texture
+            sprite_offset_y, // y-offset in the texture
+            spriteWidth,
+            spriteHeight
+        };
+
+        // Destination rectangle on the screen
+        SDL_Rect destRect = { x, y, cellWidth, cellHeight };
+
+        // Render the piece
+        SDL_RenderCopy(renderer, piecesTexture, &srcRect, &destRect);
+    }
+
+    // Clean up the texture after rendering
+    SDL_DestroyTexture(piecesTexture);
 }

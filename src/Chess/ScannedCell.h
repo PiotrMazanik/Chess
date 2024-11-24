@@ -22,6 +22,10 @@ class ScannedCell {
     ScannedCell(cell_type type, int x, int y);
     ~ScannedCell();
 
+    const int Get_X(){return x;}
+    const int Get_Y(){return y;}
+    const cell_type Get_Type(){return type;}
+
 
 
     private:

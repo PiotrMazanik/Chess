@@ -62,6 +62,7 @@ void ChessScene::render(SDL_Renderer* renderer) {
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
     m_board.RenderPieces(renderer);
+    m_inputHandler->RenderHighlight(renderer);
 
     // Present the rendered content
     SDL_RenderPresent(renderer);

@@ -105,8 +105,8 @@ build CMakeFiles/ChessGame.dir/src/Chess/InputHandler.cpp.obj: CXX_COMPILER__Che
   OBJECT_DIR = CMakeFiles\ChessGame.dir
   OBJECT_FILE_DIR = CMakeFiles\ChessGame.dir\src\Chess
 
-build CMakeFiles/ChessGame.dir/src/Chess/CellScan.cpp.obj: CXX_COMPILER__ChessGame_unscanned_Debug C$:/Users/Arch/CLionProjects/ChessGame/src/Chess/CellScan.cpp || cmake_object_order_depends_target_ChessGame
-  DEP_FILE = CMakeFiles\ChessGame.dir\src\Chess\CellScan.cpp.obj.d
+build CMakeFiles/ChessGame.dir/src/Chess/ScannedCell.cpp.obj: CXX_COMPILER__ChessGame_unscanned_Debug C$:/Users/Arch/CLionProjects/ChessGame/src/Chess/ScannedCell.cpp || cmake_object_order_depends_target_ChessGame
+  DEP_FILE = CMakeFiles\ChessGame.dir\src\Chess\ScannedCell.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Arch/CLionProjects/ChessGame/src -isystem C:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/include -isystem C:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/include/SDL2
   OBJECT_DIR = CMakeFiles\ChessGame.dir
@@ -120,7 +120,7 @@ build CMakeFiles/ChessGame.dir/src/Chess/CellScan.cpp.obj: CXX_COMPILER__ChessGa
 #############################################
 # Link the executable ChessGame.exe
 
-build ChessGame.exe: CXX_EXECUTABLE_LINKER__ChessGame_Debug CMakeFiles/ChessGame.dir/src/main.cpp.obj CMakeFiles/ChessGame.dir/src/Base/Scene.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj CMakeFiles/ChessGame.dir/src/Base/SceneManager.cpp.obj CMakeFiles/ChessGame.dir/src/Base/Game.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/Board.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/Piece.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/InputHandler.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/CellScan.cpp.obj | C$:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/manual-link/SDL2maind.lib C$:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/SDL2_imaged.lib C$:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/SDL2d.lib
+build ChessGame.exe: CXX_EXECUTABLE_LINKER__ChessGame_Debug CMakeFiles/ChessGame.dir/src/main.cpp.obj CMakeFiles/ChessGame.dir/src/Base/Scene.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/ChessScene.cpp.obj CMakeFiles/ChessGame.dir/src/Base/SceneManager.cpp.obj CMakeFiles/ChessGame.dir/src/Base/Game.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/Board.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/Piece.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/InputHandler.cpp.obj CMakeFiles/ChessGame.dir/src/Chess/ScannedCell.cpp.obj | C$:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/manual-link/SDL2maind.lib C$:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/SDL2_imaged.lib C$:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/SDL2d.lib
   FLAGS = -g
   LINK_LIBRARIES = C:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/manual-link/SDL2maind.lib  C:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/SDL2_imaged.lib  -lshell32  C:/Users/Arch/CLionProjects/ChessGame/vcpkg-master/installed/x64-windows/debug/lib/SDL2d.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ChessGame.dir

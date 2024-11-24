@@ -3,7 +3,7 @@
 //
 
 #include "ScannedCell.h"
-ScannedCell::ScannedCell(cell_type passed_type, int passed_x, int passed_y):x(passed_x),y(passed_y),type(passed_type)
+ScannedCell::ScannedCell(cell_type passed_type, int passed_y,int passed_x):x(passed_x),y(passed_y),type(passed_type)
 {
 
 }
