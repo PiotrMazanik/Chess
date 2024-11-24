@@ -30,12 +30,22 @@ void InputHandler::HandleEvent(SDL_Event& e, SDL_Renderer* renderer) {
             }
         } else {
             // Second click: move the piece
-            board->MovePiece(selectedRow, selectedCol, clickedRow, clickedCol);
-            pieceSelected = false;
+            if ((selectedRow != clickedRow || selectedCol != clickedCol) &&
+                board->getPiece(selectedRow, selectedCol)->GetFaction() != board->getPiece(clickedRow, clickedCol)->GetFaction())
+            {
+                board->MovePiece(selectedRow, selectedCol, clickedRow, clickedCol);
+                pieceSelected = false;
             SDL_Log("Moved piece to (%d, %d)", clickedRow, clickedCol);
+            }
+            else
+            {
+            SDL_Log("Failed to Move piece to (%d, %d)", clickedRow, clickedCol);
+                pieceSelected = false;
 
+            }
             // Optional: redraw the board after the move
             board->RenderPieces(renderer);
+            RenderHighlight(renderer);
             SDL_RenderPresent(renderer);
         }
     }
@@ -47,6 +57,11 @@ std::vector<ScannedCell> InputHandler::ScanCells()
     if(pieceSelected)
     {
         cells.push_back(ScannedCell(cell_type::selectedCell,selectedRow, selectedCol));
+    }
+    else
+    {
+        cells.clear();
+        return cells;
     }
     Piece* selectedPiece = board->getPiece(selectedRow, selectedCol);
 
@@ -103,7 +118,7 @@ return cells;
 
 void InputHandler::RenderHighlight(SDL_Renderer* renderer)
 {
-    std::vector<ScannedCell> ScannedCells = ScanCells();
+    ScannedCells = ScanCells();
 
     // Load the texture containing the pieces
     SDL_Texture* piecesTexture = IMG_LoadTexture(renderer, "../assets/Highlight.png");

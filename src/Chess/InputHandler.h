@@ -19,6 +19,8 @@ public:
     void RenderHighlight(SDL_Renderer* renderer);
 private:
 
+    std::vector<ScannedCell> ScannedCells;
+
     bool pieceSelected = false; // Whether a piece is selected
     int selectedRow = -1;       // Row of the selected piece
     int selectedCol = -1;       // Column of the selected piece
